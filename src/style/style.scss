@@ -1,0 +1,376 @@
+@import "_multimedia";
+
+* {
+    box-sizing: border-box;
+}
+
+main,
+.main-continer {
+    margin: 0 auto;
+}
+
+body,
+.header,
+.main,
+.content {
+    margin: 0 auto;
+    max-width: 100vw;
+}
+
+// header
+.header {
+    background-color: $color-white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+
+    &__content ,
+    &__navigation,
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+}
+
+&__content {
+    margin: 0 auto;
+    max-width: 1120px;
+    align-items: center;
+    height: 116px;
+    font-family: $font-1 ;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+&__logo {
+    font-size: 24px;
+    color: $color-black;
+}
+
+&__navigation {
+    width: 372px;
+}
+
+&__link {
+    color: $color-gray;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    &_selected {
+        font-weight: 900;
+        color: $color-black;
+
+    }
+}
+
+&__menu {
+    width: 120px;
+}
+}
+
+.menu__link {
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 17px;
+    width: 17px;
+}
+
+.user-button {
+    background-image: url(/src/img/user.svg);
+}
+
+.searc-buttonh {
+    background-image: url(/src/img/search.svg);
+}
+
+.cart-btn {
+    background-image: url(/src/img/shop\ bag.svg);
+    position: relative;
+
+    &__count {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: $color-red;
+        font-family: $font-1;
+        font-weight: 500;
+        font-size: 10px;
+        text-align: center;
+        line-height: 14px;
+        color: #FFFFFF;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(15%, 35%);
+    
+        &_empty {
+          display: none;
+        }
+      }
+}
+
+
+/* main */
+.slider {
+    margin: 0 auto;
+    max-width: $width-1120;
+    position: relative;
+
+  &__content {
+    margin: 0 auto;
+    max-width: $width-1120;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+}
+
+.slider-img {
+    width: 100%;
+    max-width: $width-1120;
+    height: 700px;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+
+    &__dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 10px;
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            cursor: pointer;
+            background-color: $color-blue-box-active;
+            border-radius: 50%;
+
+            &.active {
+                opacity: 1;
+                background-color: $color-blue-box;
+            }
+        }
+    }
+}
+
+.promo {
+    height: 553px;
+    width: 225px;
+    position: absolute;
+    right: -160px;
+
+    &__link {
+        color: $color-black;
+        display: block;
+        font-family: $font-1;
+        font-size: 18px;
+        font-weight: 700;
+        position: absolute;
+        text-decoration: none;
+        text-transform: uppercase;
+        box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+
+        &:after {
+            background: url(/src/img/arrow.png) center;
+            bottom: 12px;
+            content: "";
+            height: 12px;
+            left: 20px;
+            position: absolute;
+            width: 55px;
+        }
+    
+        &_blue {
+            background-color: $color-blue-box;
+            height: 204px;
+            left: 0;
+            padding: 102px 20px 0;
+            top: 0;
+            width: 150px;  
+        }
+    
+        &_pink {
+            background-color: $color-pink;
+            bottom: 0;
+            height: 273px;
+            padding: 144px 47px 0 20px;
+            right: 0;
+            width: 137px;
+        }
+    } 
+}
+
+.content {
+    display: flex;
+    max-width: $width-1120;
+}
+
+.sidebar {
+    height: 710px;
+    width: 197px;
+    padding-top: 45px;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 100vw;
+        height: 710px;
+        background-color: $color-gray-fon;
+        position: absolute;
+        top: 0;
+        right: -50px;
+        z-index: -10;
+    }   
+}
+
+
+.list {
+    & li {
+        margin-bottom: 20px;
+        list-style: none;
+    }
+
+    &__item {
+        color: $color-gray;
+        font-family: $font-1;
+        font-size: 12px;
+        font-weight: 500;
+        text-decoration: none;
+        
+    }
+
+    &__item_selected {
+        font-size: 14px;
+        font-weight: 700;
+        color: $color-black;
+        position: relative;
+        
+        &::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $color-blue;
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%);
+          }
+    }
+}
+
+.product-container {
+    padding-top: 50px;
+    padding-bottom: 75px;
+  }
+  
+  .products-list {
+    width: 923px;
+    margin-bottom: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+    &__item {
+      margin-bottom: 85px;
+    }
+  }
+  
+  .product {
+    width: 424px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    &__img {
+      width: 212px;
+      height: 100%;
+      box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+    }
+  
+    &__card {
+      width: 176px;
+      height: 203px;
+    }
+  
+    &__author,
+    &__rating,
+    &__description {
+      font-family: $font-2;
+      font-size: 10px;
+      color: $color-gray;
+    }
+  
+    &__author,
+    &__title {
+      margin-bottom: 5px;
+    }
+  
+    &__rating,
+    &__description,
+    &__price {
+      margin-bottom: 17px;
+    }
+
+    .rating__stars {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    &__rating {
+      width: 150px;
+      display: flex;
+    }
+  
+    &__title,
+    &__price {
+      font-family: $font-1;
+      font-weight: 700;
+      color: $color-black;
+    }
+  
+    &__title {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+  
+    &__price {
+      font-size: 13px;
+    }
+  }
+  
+  .btn {
+    width: 176px;
+    height: 45px;
+    border: 1px solid $color-blue;
+    background-color: $color-white;
+    color: $color-blue;
+    font-family: $font-1;
+    font-weight: 700;
+    font-size: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+  
+    &_load {
+      display: block;
+      margin: 0 auto;
+    }
+  
+    &_in-cart {
+      border: 1px solid $color-gray-btn;
+      color: $color-gray;
+    }
+  }
+  
+@import "_media";
+
+    
+
+
+
